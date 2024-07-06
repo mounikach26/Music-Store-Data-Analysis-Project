@@ -1,0 +1,74 @@
+#Project_overview
+
+This Data Analysis Project aims to provide insights into the best customers, best artists, most popular music Genre and Bands 
+and maximim purchases by customers with their names. By analyzing various aspects of the music database, we seek to identify 
+trends, make data-driven recommendationsand gain a deeper understanding of the Music store Sales
+
+#Data Sources
+
+Music Store Data: The primary data set used for the analysis is the "music store data .zip" file, containg all the neccesary csv files for the data analysis.
+The dataset contains several CSV files related to different aspects of the music store. Here is a brief description of each file based on typical naming conventions:
+
+album.csv: Details of albums.
+album2.csv: Additional details or a different version of album data.
+artist.csv: Details of artists.
+customer.csv: Customer information.
+employee.csv: Employee information.
+genre.csv: Genres of music.
+invoice.csv: Invoices of sales.
+invoice_line.csv: Detailed line items within each invoice.
+media_type.csv: Types of media formats.
+playlist.csv: Playlists information.
+playlist_track.csv: Tracks within playlists.
+track.csv: Details of individual tracks.
+schema_diagram.png: Schema diagram of the database.
+To provide specific insights, I'll load the relevant CSV files and perform some analysis. Let's start by examining the structure and a few records from each CSV file. ​
+
+#Tools
+
+-  Excel - Data Cleaning 
+- Postgresql server - Data Analysis 
+
+#Data Cleaning/Preperation
+
+In the initial daqta preperation phase, we performed the following tasks:
+
+  1. Data loading and inspection
+  2. Handling missing values
+  3. Data cleaning and formatting
+
+#Exploratory Darta Analysis
+
+EDA involved exploring the music store data to answer key questions such as:
+
+  1) Find how much amount apent by each customer on artist
+  2) We want to find out the most popular music Genre for each country
+  3) Find the customer that has spent the most on the music for each country along with the country name
+  4)Top artists with track count of op 10 rock bands
+  5) Artists who have written rock music in our data set
+  6) All the customers who listens to rock music in alphabetical order
+
+#Data Analysis
+
+Include some intesting code/features worked with
+
+```sql
+SELECT
+    DATE_TRUNC('month', sale_date) AS month,
+    COUNT(*) AS total_sales
+FROM
+    sales
+GROUP BY
+    month
+ORDER BY
+    month;
+```
+
+#results/Findings
+
+   - Total amount spent by each customer on tracks by each artist.
+   - Most popular genre in each country by track count.
+   - Customer who spent the most on music in each country.
+   - Top 10 rock artists by number of tracks.
+   - List of artists who have produced rock music.
+   - Alphabetically sorted list of customers who purchased rock tracks.The analysis results are summarized as follows:
